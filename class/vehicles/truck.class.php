@@ -1,10 +1,11 @@
 <?php
+require_once "./class/lightableInterface.php";
 require_once "./class/vehicles/vehicle.class.php";
 /**
  * Final class Truck whitch inherit from Vehicle
  * @author Michel-Ange MENDES DOS SANTOS
  */
-final class Truck extends Vehicle{
+final class Truck extends Vehicle implements LightableInterface{
 // Constants
     const ALLOWED_ENERGIES = ['fuel'];
 
@@ -32,6 +33,27 @@ final class Truck extends Vehicle{
      * @property int
      */
     private $currentStorage;
+
+// Interface
+    /**
+     * Switch on the headlights
+     * 
+     * @return bool
+     */
+    public function switchOn(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Switch off the headlights
+     * 
+     * @return bool
+     */
+    public function switchOff(): bool
+    {
+        return false;
+    }
     
 // Magic methods
     /**

@@ -1,10 +1,11 @@
 <?php
+require_once "./class/lightableInterface.php";
 require_once "./class/vehicles/vehicle.class.php";
 /**
  * Final class Car whitch inherit from Vehicle
  * @author Michel-Ange MENDES DOS SANTOS
  */
-final class Car extends Vehicle{
+final class Car extends Vehicle implements LightableInterface{
 // Constants
     const ALLOWED_ENERGIES = ['fuel', 'electric'];
     
@@ -26,6 +27,27 @@ final class Car extends Vehicle{
      * @property bool
      */
     private $hasParkBrake = true;
+
+//Interface
+    /**
+     * Switch on the headlights
+     * 
+     * @return bool
+     */
+    public function switchOn(): bool
+    {
+        return true;
+    }
+    
+    /**
+     * Switch off the headlights
+     * 
+     * @return bool
+     */
+    public function switchOff(): bool
+    {
+        return false;
+    }
 
 // Magic methods
     /**

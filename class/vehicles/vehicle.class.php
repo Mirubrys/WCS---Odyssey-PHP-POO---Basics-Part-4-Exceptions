@@ -13,7 +13,7 @@ abstract class Vehicle {
     /**
      * @property integer
      */
-    protected $currentSpeed;
+    protected $currentSpeed = 0;
 
     /**
      * @property integer
@@ -126,8 +126,8 @@ abstract class Vehicle {
      * @return string $sentence
      */
     protected function forward(int $speed): string{
-        $this->currentSpeed = $speed;
-        $sentence = "";
+        $this->setCurrentSpeed($speed);
+        $sentence = "On pédale à $speed.";
         return $sentence;
     }
 
@@ -136,7 +136,7 @@ abstract class Vehicle {
      * @param void
      * @return string $sentence
      */
-    protected function brake(): string{
+    public function brake(): string{
         $sentence = "";
         while ($this->currentSpeed > 0) {
             $this->currentSpeed--;
