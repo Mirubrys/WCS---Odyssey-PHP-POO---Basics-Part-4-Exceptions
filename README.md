@@ -1,2 +1,2 @@
-# WCS---Odyssey-PHP-POO---Basics-Part-4-Exceptions
+# WCS---Odyssey-PHP-POO---Basics-Part-5-:-Implémentation-d'interfaces
 Odyssey quets
